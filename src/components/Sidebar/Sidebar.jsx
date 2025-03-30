@@ -91,7 +91,12 @@ export default function Sidebar({ setChat, closeMenu }) {
               '&:hover': { backgroundColor: '#D7C7F4' },
             }}
           >
+            <Typography
+              fontSize={{ xs: 10,md: 15 }}
+              color="black"
+            >
             Past Conversations
+            </Typography>
           </Button>
         </Link>
       </Box>

@@ -4,15 +4,15 @@ import Avatar from '@mui/material/Avatar';
 
 export default function Navbar() {
   return (
-    <AppBar position="static" sx={{ backgroundColor: '#E6DFF0', color: '#5A287D' }}>
+    //<AppBar position="static" sx={{ backgroundColor: '#E6DFF0', color: '#5A287D' }}>
       <Toolbar>
         
         {/* Centered Title */}
-        <Typography variant="h6" sx={{ flexGrow: 1, textAlign: '', fontWeight: 'bold' }}>
+        <Typography variant="h6" sx={{ color:"#9785BA", flexGrow: 1, textAlign: '', fontWeight: 'bold' }}>
           Bot AI
         </Typography>
 
       </Toolbar>
-    </AppBar>
+    // </AppBar>
   );
 }
