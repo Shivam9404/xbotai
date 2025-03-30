@@ -50,11 +50,11 @@ function App() {
             }}
           >
           {/* Main Content */}
-          <Grid>
+          {/* <Grid item xs={12} md={2.5}>
             <Sidebar setChat={setChat} closeMenu={() => setMenuOpen(false)} />
-          </Grid> 
+          </Grid> */}
 
-          
+
           <Grid item xs={12} md={9.5}>
             <Outlet context={{ chat, setChat, handleToggleMenu: setMenuOpen }} />
           </Grid>
