@@ -9,7 +9,7 @@ export default function Navbar() {
         
         {/* Centered Title */}
         <Typography variant="h6" sx={{ color:"#9785BA", flexGrow: 1, textAlign: '', fontWeight: 'bold' }}>
-          Bot AI
+        <h1>Bot AI</h1>
         </Typography>
 
       </Toolbar>
