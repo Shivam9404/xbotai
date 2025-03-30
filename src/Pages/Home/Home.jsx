@@ -21,33 +21,33 @@ export default function Home() {
   const { mode } = useContext(ThemeContext);
 
   const generateResponse = (input) => {
-    const resFound = data.find(
+    if (!input.trim()) return; // ✅ Prevent empty messages
+  
+    const resFound = data?.find(
       (item) => input.toLowerCase() === item.question.toLowerCase()
     );
-
-    let answer = 'Sorry, did not understand your query!';
-    if (resFound !== undefined) {
-      answer = resFound.response;
-    }
-
-    setChat((prev = []) => [
-      ...prev,  // ✅ Fix: Ensure prev is always an array
+  
+    const answer = resFound ? resFound.response : 'Sorry, did not understand your query!';
+  
+    setChat((prev) => [
+      ...(prev || []),  // ✅ Ensure prev is always an array
       {
         type: 'Human',
         text: input,
         time: new Date(),
-        id: chatId,
+        id: prev?.length ? prev[prev.length - 1].id + 1 : 1, // ✅ Generate dynamic ID
       },
       {
         type: 'AI',
         text: answer,
         time: new Date(),
-        id: chatId + 1,
+        id: prev?.length ? prev[prev.length - 1].id + 2 : 2, // ✅ Increment ID correctly
       },
     ]);
-
-    setChatId((prev) => prev + 2);
+  
+    setChatId((prevId) => prevId + 2); // ✅ Ensure chatId is correctly updated
   };
+  
 
   return (
     <Stack height="100vh" justifyContent="space-between" sx={{
