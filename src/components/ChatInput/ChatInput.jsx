@@ -9,9 +9,10 @@ export default function ChatInput({ generateResponse, setScroll, chat, clearChat
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (input.trim() === '') return; // Prevent empty submission
     generateResponse(input);
     setInput('');
-    setScroll((prev) => !prev);
+    setScroll(true); // Ensure it always scrolls down
   };
 
   const handleSave = () => {
@@ -25,7 +26,9 @@ export default function ChatInput({ generateResponse, setScroll, chat, clearChat
   };
 
   useEffect(() => {
-    inputRef.current.focus();
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
   }, []);
 
   return (
@@ -48,6 +51,7 @@ export default function ChatInput({ generateResponse, setScroll, chat, clearChat
             onChange={(e) => setInput(e.target.value)}
             required
             inputRef={inputRef}
+            data-testid="chat-input" // ✅ Added for testing
           />
 
           <Button
@@ -61,6 +65,8 @@ export default function ChatInput({ generateResponse, setScroll, chat, clearChat
                 paddingRight: 1.5,
               },
             }}
+            aria-label="Ask AI" // ✅ Added for accessibility
+            data-testid="submit-button" // ✅ Added for testing
           >
             Ask
           </Button>
@@ -77,6 +83,8 @@ export default function ChatInput({ generateResponse, setScroll, chat, clearChat
                 paddingRight: 1.5,
               },
             }}
+            aria-label="Save Chat" // ✅ Added for accessibility
+            data-testid="save-button" // ✅ Added for testing
           >
             Save
           </Button>
