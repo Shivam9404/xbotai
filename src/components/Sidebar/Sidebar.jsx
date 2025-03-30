@@ -1,27 +1,24 @@
 import { useContext } from 'react';
-
 import { ThemeContext } from '../../theme/ThemeContext';
-
 import { Typography, Box, Stack, Button, useMediaQuery } from '@mui/material';
-
-import icon from '../../assets/newchat.png';
-
 import { Link } from 'react-router-dom';
 
 import AddCommentIcon from '@mui/icons-material/AddComment';
-
 import CloseIcon from '@mui/icons-material/Close';
+
+import icon from '../../assets/newchat.png';
 
 export default function Sidebar({ setChat, closeMenu }) {
   const { mode, setMode } = useContext(ThemeContext);
   const isMobile = useMediaQuery('(max-width: 800px)');
 
-  const handleMode = () => {
-    setMode((prev) => (prev === 'light' ? 'dark' : 'light'));
+  const handleModeToggle = () => {
+    setMode((prev) => (prev === 'Light' ? 'Dark' : 'Light'));
   };
 
   return (
     <Box>
+      {/* Close Button for Mobile View */}
       {isMobile && (
         <Button
           endIcon={<CloseIcon />}
@@ -36,17 +33,16 @@ export default function Sidebar({ setChat, closeMenu }) {
         </Button>
       )}
 
+      {/* New Chat Button */}
       <Link to="/" style={{ textDecoration: 'none' }}>
         <Stack
           onClick={() => {
-            setChat();
-            closeMenu();
+            setChat([]); // Reset chat history
+            closeMenu(); // Close sidebar on mobile
           }}
           sx={{
-            bgcolor: 'primary.main',
-            '&:hover': {
-              bgcolor: 'primary.light',
-            },
+            bgcolor: '#D7C7F4',
+            '&:hover': { bgcolor: '#D7C7F4' },
           }}
           direction="row"
           spacing={1}
@@ -60,7 +56,7 @@ export default function Sidebar({ setChat, closeMenu }) {
               component="img"
               src={icon}
               height={42}
-              width={42}
+              width={36}
               borderRadius={2}
               boxShadow={4}
               flexShrink={0}
@@ -68,22 +64,26 @@ export default function Sidebar({ setChat, closeMenu }) {
             <Typography
               variant="h6"
               fontSize={{ xs: 16, md: 20 }}
-              color="text.primary"
+              color="black"
             >
               New Chat
             </Typography>
           </Stack>
-
           <AddCommentIcon sx={{ color: 'text.primary' }} />
         </Stack>
       </Link>
 
+      {/* Past Conversations Button */}
       <Box p={{ xs: 2, md: 3 }}>
         <Link to="/history">
           <Button
             variant="contained"
-            sx={{ width: 1 }}
-            onClick={closeMenu}
+            sx={{
+              backgroundColor: '#D7C7F4',
+              color: 'white',
+              textTransform: 'none',
+              '&:hover': { backgroundColor: '#D7C7F4' },
+            }}
           >
             Past Conversations
           </Button>
