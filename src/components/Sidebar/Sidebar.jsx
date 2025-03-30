@@ -53,7 +53,7 @@ export default function Sidebar({ setChat, closeMenu }) {
           alignItems="center"
           justifyContent="space-between"
           py={2}
-          px={{ xs: 2, md: 3 }}
+          px={{ xs: 2, md: 3 }}         
         >
           <Stack direction="row" gap={1} alignItems="center">
             <Box
