@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { ThemeContext } from './theme/ThemeContext';
 import { useState, useEffect } from 'react';
-//import Sidebar from './components/Sidebar/Sidebar';
+import Sidebar from './components/Sidebar/Sidebar';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -49,10 +49,12 @@ function App() {
               },
             }}
           >
-            <Sidebar setChat={setChat} closeMenu={() => setMenuOpen(false)} />
-          </Grid> */}
-
           {/* Main Content */}
+          <Grid>
+            <Sidebar setChat={setChat} closeMenu={() => setMenuOpen(false)} />
+          </Grid> 
+
+          
           <Grid item xs={12} md={9.5}>
             <Outlet context={{ chat, setChat, handleToggleMenu: setMenuOpen }} />
           </Grid>
