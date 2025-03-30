@@ -59,14 +59,15 @@ export default function ChatInput({ generateResponse, setScroll, chat, clearChat
             type="submit"
             sx={{
               fontSize: { xs: 12, md: 16 },
+              textTransform: 'none', // ✅ Prevents uppercase transformation
               '@media (max-width:767px)': {
                 minWidth: 0,
                 paddingLeft: 1.5,
                 paddingRight: 1.5,
               },
             }}
-            aria-label="Ask AI" // ✅ Added for accessibility
-            data-testid="submit-button" // ✅ Added for testing
+            aria-label="Ask AI"
+            data-testid="submit-button"
           >
             Ask
           </Button>
@@ -77,14 +78,15 @@ export default function ChatInput({ generateResponse, setScroll, chat, clearChat
             disabled={chat.length === 0}
             sx={{
               fontSize: { xs: 12, md: 16 },
+              textTransform: 'none', // ✅ Prevents uppercase transformation
               '@media (max-width:767px)': {
                 minWidth: 0,
                 paddingLeft: 1.5,
                 paddingRight: 1.5,
               },
             }}
-            aria-label="Save Chat" // ✅ Added for accessibility
-            data-testid="save-button" // ✅ Added for testing
+            aria-label="Save Chat"
+            data-testid="save-button"
           >
             Save
           </Button>
