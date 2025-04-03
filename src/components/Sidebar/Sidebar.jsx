@@ -81,8 +81,8 @@ export default function Sidebar({ setChat, closeMenu }) {
 
       {/* Past Conversations Button */}
       <Box p={{ xs: 2, md: 3 }}>
+        
         <div>
-          <div>Past Conversations</div> {/* ✅ Now Cypress can find this */}
           <Button
             variant="contained"
             sx={{
@@ -98,6 +98,7 @@ export default function Sidebar({ setChat, closeMenu }) {
           </Button>
         </div>
       </Box>
+
 
     </Box>
   );
