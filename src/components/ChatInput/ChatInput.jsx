@@ -39,7 +39,7 @@ export default function ChatInput({ generateResponse, setScroll, chat, clearChat
             placeholder="Message Bot AI..."
             sx={{
               flex: 1,
-              bgcolor: 'primary.light',
+              bgcolor: '#FFFFFF',
               borderRadius: 1,
               '& input': {
                 fontSize: { xs: 12, md: 16 },
@@ -51,7 +51,7 @@ export default function ChatInput({ generateResponse, setScroll, chat, clearChat
             onChange={(e) => setInput(e.target.value)}
             required
             inputRef={inputRef}
-            data-testid="chat-input" // ✅ Added for testing
+            data-testid="chat-input" // 
           />
 
           <Button
@@ -59,7 +59,9 @@ export default function ChatInput({ generateResponse, setScroll, chat, clearChat
             type="submit"
             sx={{
               fontSize: { xs: 12, md: 16 },
-              textTransform: 'none', // ✅ Prevents uppercase transformation
+              backgroundColor: '#D7C7F4',
+              color: 'black',
+              textTransform: 'none', // 
               '@media (max-width:767px)': {
                 minWidth: 0,
                 paddingLeft: 1.5,
@@ -78,7 +80,9 @@ export default function ChatInput({ generateResponse, setScroll, chat, clearChat
             disabled={chat.length === 0}
             sx={{
               fontSize: { xs: 12, md: 16 },
-              textTransform: 'none', // ✅ Prevents uppercase transformation
+              backgroundColor: '#D7C7F4',
+              color: 'black',
+              textTransform: 'none', 
               '@media (max-width:767px)': {
                 minWidth: 0,
                 paddingLeft: 1.5,

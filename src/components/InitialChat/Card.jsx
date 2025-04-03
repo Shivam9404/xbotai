@@ -5,7 +5,7 @@ import { styled } from '@mui/material/styles';
 export default function Card({ heading, subtext, handleClick }) {
   return (
     <Stack
-      bgcolor="primary.light"
+      bgcolor="#FFFFFF"
       p={{ xs: 1.2, md: 3 }}
       borderRadius={1}
       boxShadow="0 6px 12px rgba(0,0,0,0.1)"
