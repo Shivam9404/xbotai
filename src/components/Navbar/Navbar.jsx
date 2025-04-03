@@ -1,18 +1,14 @@
-import { AppBar, Toolbar, Typography, Button, Stack, Box } from '@mui/material';
-import { Menu as MenuIcon } from '@mui/icons-material';
-import Avatar from '@mui/material/Avatar';
+import { AppBar, Toolbar, Typography } from '@mui/material';
 
 export default function Navbar() {
   return (
-    //<AppBar position="static" sx={{ backgroundColor: '#E6DFF0', color: '#5A287D' }}>
+    <AppBar position="static" sx={{ backgroundColor: '#E6DFF0', color: '#5A287D' }}>
       <Toolbar>
-        
         {/* Centered Title */}
-        <Typography variant="h6" sx={{ color:"#9785BA", flexGrow: 1, textAlign: '', fontWeight: 'bold' }}>
-        <h1>Bot AI</h1>
+        <Typography variant="h6" sx={{ color:"#9785BA", flexGrow: 1, fontWeight: 'bold' }}>
+          Bot AI
         </Typography>
-
       </Toolbar>
-    // </AppBar>
+    </AppBar>
   );
 }
