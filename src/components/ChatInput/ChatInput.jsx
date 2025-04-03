@@ -104,7 +104,7 @@ export default function ChatInput({ generateResponse, setScroll, chat, clearChat
         autoHideDuration={5000}
         action={
           <Link to="/history">
-            <Button size="small">See past conversations</Button>
+            <Button size="small">Past conversations</Button>
           </Link>
         }
       />
