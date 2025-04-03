@@ -93,7 +93,7 @@ export default function Sidebar({ setChat, closeMenu }) {
             component={Link}
             to="/history"
           >
-            Past Conversations  {/* ✅ Kept inside Button */}
+            Past Conversations 
           </Button>
         </div>
       </Box>
