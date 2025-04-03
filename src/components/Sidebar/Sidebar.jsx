@@ -81,7 +81,7 @@ export default function Sidebar({ setChat, closeMenu }) {
 
       {/* Past Conversations Button */}
       <Box p={{ xs: 2, md: 3 }}>
-        <Link to="/history">
+        <div>
           <Button
             variant="contained"
             sx={{
@@ -90,12 +90,14 @@ export default function Sidebar({ setChat, closeMenu }) {
               textTransform: 'none',
               '&:hover': { backgroundColor: '#D7C7F4' },
             }}
+            component={Link}
+            to="/history"
           >
-            Past Conversations
+            <Typography color="black">Past Conversations</Typography>
           </Button>
-        </Link>
-
+        </div>
       </Box>
+
     </Box>
   );
 }
