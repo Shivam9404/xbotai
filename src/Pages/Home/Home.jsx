@@ -27,7 +27,7 @@ export default function Home() {
       (item) => input.toLowerCase() === item.question.toLowerCase()
     );
   
-    const answer = resFound ? resFound.response : 'Sorry, did not understand your query!';
+    const answer = resFound ? resFound.response : 'Sorry, Did not understand your query!';
   
     setChat((prev) => [
       ...(prev || []),
