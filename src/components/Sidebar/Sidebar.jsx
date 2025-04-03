@@ -36,16 +36,16 @@ export default function Sidebar({ setChat, closeMenu }) {
       {/* New Chat Button */}
       <Link to="/" style={{ textDecoration: 'none' }}>
         <Stack
-            onClick={(e) => {
-              e.preventDefault();  // 🛑 Prevent unwanted default behavior
-              setChat([]);         // ✅ Reset chat
-            
-              if (typeof closeMenu === 'function') {
-                closeMenu();       // ✅ Close sidebar only if it's a function
-              }
-            
-              window.location.pathname = '/';  // ✅ Force navigation if React Router fails
-            }}
+          onClick={(e) => {
+            e.preventDefault();  // 🛑 Prevent unwanted default behavior
+            setChat([]);         // ✅ Reset chat
+
+            if (typeof closeMenu === 'function') {
+              closeMenu();       // ✅ Close sidebar only if it's a function
+            }
+
+            window.location.pathname = '/';  // ✅ Force navigation if React Router fails
+          }}
           sx={{
             bgcolor: '#D7C7F4',
             '&:hover': { bgcolor: '#D7C7F4' },
@@ -91,14 +91,10 @@ export default function Sidebar({ setChat, closeMenu }) {
               '&:hover': { backgroundColor: '#D7C7F4' },
             }}
           >
-            <Typography
-              fontSize={{ xs: 10,md: 15 }}
-              color="black"
-            >
             Past Conversations
-            </Typography>
           </Button>
         </Link>
+
       </Box>
     </Box>
   );
