@@ -51,7 +51,7 @@ export default function ChattingCard({ details, showFeedbackModal, updateChat, s
       />
 
       <Box>
-        <Typography variant="h6" fontWeight={700} fontSize={{ xs: 14, md: 16 }}>
+        <Typography variant="h6" fontWeight={700} fontSize={{ xs: 14, md: 16 }} component="span">
           {details.type === "AI" ? 'Soul AI' : 'You'}
         </Typography>
 

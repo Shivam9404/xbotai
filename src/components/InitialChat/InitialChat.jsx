@@ -7,7 +7,7 @@ import Card from './Card';
 export default function InitialChat({ generateResponse }) {
   const initialData = [
     {
-      heading: 'Hi, what is the weather',
+      heading: 'Hi, what is the weather?',
       subtext: 'Get immediate AI-generated response',
     },
     {
