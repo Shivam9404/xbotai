@@ -5,9 +5,12 @@ export default function Navbar() {
     //<AppBar position="static" sx={{ backgroundColor: '#E6DFF0', color: '#5A287D' }}>
       <Toolbar>
         {/* Centered Title */}
+        <header>
         <Typography variant="h1" sx={{ color:"#9785BA", flexGrow: 1, fontWeight: 'bold' }}>
           Bot AI
         </Typography>
+        </header>
+        
       </Toolbar>
     //</AppBar>
   );
